@@ -1,4 +1,3 @@
 {
-    "required": "I am required",
-    "optional": "I am optional"
+    "port": 3081
 }
