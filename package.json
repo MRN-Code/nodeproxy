@@ -8,22 +8,27 @@
   },
   "dependencies": {
     "boom": "^2.6.1",
-    "config": "^1.11.0",
-    "good": "^5.1.2",
-    "good-file": "^4.0.2",
-    "hapi": "^8.2.0",
-    "lodash": "^3.4.0"
+    "config": "1.11.0",
+    "good": "6.1.2",
+    "good-console": "5.0.0",
+    "good-file": "5.0.0",
+    "hapi": "8.2.0",
+    "jade": "1.9.2",
+    "lodash": "3.4.0",
+    "nipple": "^2.5.6",
+    "thenify-all": "^1.6.0",
+    "wreck": "^5.5.1"
   },
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-jshint": "^0.11.0",
-    "grunt-jscs": "^1.5.0",
-    "grunt-mocha-cli": "^1.12.0",
-    "load-grunt-config": "^0.16.0",
-    "load-grunt-tasks": "^3.1.0",
-    "minimist": "^1.1.0",
-    "should": "^5.0.0",
-    "time-grunt": "^1.0.0"
+    "grunt": "0.4.5",
+    "grunt-contrib-jshint": "0.11.0",
+    "grunt-jscs": "1.5.0",
+    "grunt-mocha-cli": "1.12.0",
+    "load-grunt-config": "0.16.0",
+    "load-grunt-tasks": "3.1.0",
+    "minimist": "1.1.0",
+    "should": "5.0.0",
+    "time-grunt": "1.0.0"
   },
   "scripts": {
     "test": "grunt test"

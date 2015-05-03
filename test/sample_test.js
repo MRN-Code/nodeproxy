@@ -1,27 +1,27 @@
 'use strict';
 
 var should = require('should');
+var server = require('./../');
+var defaultOptions = {
+    method: 'GET',
+    url: '/test'
+};
+var serverFixture;
 
-describe('Array', function() {
-    describe('#indexOf()', function() {
-        var testArray;
-        beforeEach('prepare test array', function () {
-            testArray = [1, 2, 3];
+describe('Proxy', function() {
+    before('start test server to proxy to', function () {
+        var spawn = require('child_process').spawn;
+        serverFixture = spawn('node', ['./fixtures/server.js']);
+        serverFixture.on('close', function(code) {
+            console.log('Fixture server shut down successfully: ' + code);
         });
-        it('should return the index when the value is present', function() {
-            testArray.indexOf(1).should.be.equal(0);
-            testArray.indexOf(2).should.be.equal(1);
-            testArray.indexOf(3).should.be.equal(2);
-        });
-        it('should return -1 when the value is not present', function() {
-            testArray.indexOf(5).should.be.equal(-1);
-            testArray.indexOf(0).should.be.equal(-1);
-        });
-        it('silly async test', function(done) {
-            process.nextTick(function() {
-                //this is async
-                done();
-            });
+    });
+    after('stop test server', function() {
+        serverFixture.kill();
+    });
+    it('should proxy a request to the test server', function(done) {
+        server.inject(defaultOptions, function(response) {
+            response.result.should.be.eql('{ message: "success", warning: null }');
         });
     });
 });

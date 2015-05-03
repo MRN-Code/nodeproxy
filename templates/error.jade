@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+    head
+        style
+            include css/error.css
+        style
+            include css/vendor/Zendesk/zenbox.v2.6.css
+        script
+            include js/error.js
+        script
+            include js/vendor/Zendesk/zenbox.v2.6.js
+    body
+        div#overlay
+        div#header
+            img(src="error/images/coins_logo.jpg")
+        div#container
+            h2 #{errorCode}
+            h4 #{errorMessage}
+            img(src="error/images/mri_laptop.png")
+            p This event has been logged, and will not go unnoticed. Please feel free to report this incident if you feel it warrants extra attention.
+            h3 Details:
+            ul
+                li Upstream status code: #{errorCode}
+                li Upstream message: #{errorMessage} 
+                li Requested path: #{requestPath}
+                li Request ID(used to find this request in our logs): #{requestId}
+                li Raw error object: #{errorObj}
+            ul
+        div#footer
+            p
+                | Have something to say? Please 
+                a.feedback-link(href="#") send us feedback.

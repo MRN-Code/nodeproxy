@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <title>COINS Maintenance</title>
+        <meta name="description" content="Collaborative Informatics and Neuroimaging Suite (Under Maintenance)">
+        <meta name="keywords" content="neuroinformatics, neuroimaging, research">
+        <meta name="author" content="COINS">
+        <link rel="shortcut icon" href="favicon.ico">
+        <style>
+            body, html, .container, .overlay{
+                margin: 0px;
+                padding: 0px;
+                height: 100%;
+                width: 100%;
+            }
+            body {
+                background-color: #fff;
+                color: #555;
+                font-weight: 400;
+                font-size: 1em;
+                font-family: 'Raleway', Arial, sans-serif;
+                overflow: hidden;
+                overflow-y: scroll;
+                min-height: 590px;
+            }
+            #overlay {
+                background-image: url('images/noise.png');
+                width:100%;
+                height:100%;
+                z-index:1;
+                content:"";
+                position:fixed;
+            }
+            #header {
+                text-align: center;
+                position:relative;
+            }
+            #header img {
+                width: 90%;
+                max-width: 1200px;
+            }
+            .container {
+                text-align: center;
+                z-index: 2;
+                position: absolute;
+            }
+            .container img {
+                margin-right: auto;
+                margin-left: auto;
+                display: block;
+                height: 50%;
+            }
+        </style>
+        <link rel="stylesheet" href="css/vendor/Zendesk/zenbox.v2.6.css">
+        <script>
+            (function() {
+                "use strict";
+                var handleDOMContentLoaded = function() {
+                    var feedbackLink = document.getElementsByClassName('feedback-link')[0];
+                    feedbackLink.addEventListener(
+                        'click',
+                        window.Zenbox.show
+                    );
+                    window.Zenbox.init({
+                        dropboxID: 20294576,
+                        url: 'https://coins.zendesk.com',
+                        tabTooltip: 'Support',
+                        tabImageURL: 'https://assets.zendesk.com/external/zenbox/images/tab_support.png',
+                        tabColor: '#6d8b9f',
+                        tabPosition: 'Left'
+                    });
+                    
+                };
+                document.addEventListener(
+                    'DOMContentLoaded',
+                    handleDOMContentLoaded,
+                    false
+                );
+            })();
+        </script>
+        <script type='text/javascript' src='js/vendor/Zendesk/zenbox.v2.6.js'></script>
+    </head>
+    <body>
+        <div id='overlay'></div>
+        <div id='header'><img src='images/coins_logo.jpg' /></div>
+        <div class='container'>
+            <h2>COINS is currently unavailable</h2>
+            <img src='images/mri_laptop.png' />
+            <p>
+                We are investigating the situation with the finest tools at our disposal, and will get COINS back online as soon as possible.
+            </p>
+            <p>
+                Have something to say? Please <a href='#' class='feedback-link'>send us feedback</a>.
+            </p>
+        </div>
+    </body>
+</html>
